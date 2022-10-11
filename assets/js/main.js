@@ -16,16 +16,28 @@ for (let i = 0; i < mailAutorizzate.length; i++ ) {
     
     if (email === userMail) {
         email = true;
-        element.innerHTML = 'accesso consentito';
+        element.innerHTML = 'Accesso consentito';
     }
 
 }
 
 if (email != true) {
-    element.innerHTML = 'accesso negato';
+    element.innerHTML = 'Accesso negato';
 }    
 
 
 
 // // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer
-//  const userNumber = Math.floor(Math.random()*6);
+ const userNumber = Math.floor(Math.random()*6) + 1;
+ console.log(userNumber);
+ const computerNumber = Math.floor(Math.random()*6) + 1;
+ console.log(computerNumber);
+
+
+
+if (userNumber > computerNumber) {
+    console.log('Hai vinto!');
+} else {
+    console.log('Hai perso');
+
+}
