@@ -8,29 +8,20 @@ const email = prompt('Inserisci la tua email');
 // creo lista
 const mailAutorizzate = ['giuliagrifo1@gmail.com', 'marcorossi@hotmail.com', 'nala22@gmail.com'];
 
-const element = document.querySelector('div');
+const element = document.querySelector('p');
+
+let isValid = false;
 
 // controlla che sia nella lista di chi può accedere
 for (let i = 0; i < mailAutorizzate.length; i++ ) {
     const userMail = mailAutorizzate[i];
-    // console.log(user);
-
+    
     if (email === userMail) {
-        console.log(`${email} 'accesso consentito'`);
-
-        const result = document.createElement('p');
-        result.append(`${email}: accesso consentito`);
-        element.append(result);
-
-    } else {
-        // console.log('accesso negato');
-        const denied = document.createElement('p');
-        denied.append(`${email}: accesso negato`);
-        element.append(denied);
+        isValid = true;
+        element.innerHTML = `${email}: accesso consentito`
     }
 
 }
 
-
-// for (let i = 0 )
+element.innerHTML = `${email}: accesso negato`
 
