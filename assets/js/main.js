@@ -7,7 +7,8 @@ const email = prompt('Inserisci la tua email');
 // console.log(email);
 
 // controlla che sia nella lista di chi può accedere
-
+const autorizzati = [email];
+console.log(`${autorizzati} accesso consentito`);
 
 
 // for (let i = 0 )
