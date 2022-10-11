@@ -2,26 +2,31 @@
 
 
 // Chiedi all’utente la sua email
-const email = prompt('Inserisci la tua email');
+let email = prompt('Inserisci la tua email');
 // console.log(email);
-
 // creo lista
 const mailAutorizzate = ['giuliagrifo1@gmail.com', 'marcorossi@hotmail.com', 'nala22@gmail.com'];
 
-const element = document.querySelector('p');
 
-let isValid = false;
 
-// controlla che sia nella lista di chi può accedere
+// controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato sull’esito del controllo
 for (let i = 0; i < mailAutorizzate.length; i++ ) {
     const userMail = mailAutorizzate[i];
     
     if (email === userMail) {
-        isValid = true;
-        element.innerHTML = `${email}: accesso consentito`
+        email = true;
+        const element = document.querySelector('p');
+        element.innerHTML = 'accesso consentito';
     }
 
 }
 
-element.innerHTML = `${email}: accesso negato`
+if (email != true) {
+    const element = document.querySelector('p');
+    element.innerHTML = 'accesso negato';
+}    
 
+
+
+// // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer
+//  const userNumber = Math.floor(Math.random()*6);
