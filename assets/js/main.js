@@ -8,6 +8,7 @@ let email = prompt('Inserisci la tua email');
 const mailAutorizzate = ['giuliagrifo1@gmail.com', 'marcorossi@hotmail.com', 'nala22@gmail.com'];
 
 
+const element = document.querySelector('p');
 
 // controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato sull’esito del controllo
 for (let i = 0; i < mailAutorizzate.length; i++ ) {
@@ -15,14 +16,12 @@ for (let i = 0; i < mailAutorizzate.length; i++ ) {
     
     if (email === userMail) {
         email = true;
-        const element = document.querySelector('p');
         element.innerHTML = 'accesso consentito';
     }
 
 }
 
 if (email != true) {
-    const element = document.querySelector('p');
     element.innerHTML = 'accesso negato';
 }    
 
