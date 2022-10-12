@@ -2,11 +2,12 @@
 
 
 // Chiedi all’utente la sua email
-let email = prompt('Inserisci la tua email');
+const email = prompt('Inserisci la tua email');
 // console.log(email);
 // creo lista
 const mailAutorizzate = ['giuliagrifo1@gmail.com', 'marcorossi@hotmail.com', 'nala22@gmail.com'];
 
+let allowed;
 
 const element = document.querySelector('p');
 
@@ -15,15 +16,16 @@ for (let i = 0; i < mailAutorizzate.length; i++ ) {
     const userMail = mailAutorizzate[i];
     
     if (email === userMail) {
-        email = true;
-        element.innerHTML = 'Accesso consentito';
+        allowed = true;
     }
 
 }
 
-if (email != true) {
+if (allowed) {
+    element.innerHTML = 'Accesso consentito';
+}   else {
     element.innerHTML = 'Accesso negato';
-}    
+}
 
 
 
